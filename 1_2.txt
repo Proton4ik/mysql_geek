@@ -1,0 +1,136 @@
+USE vk;
+DROP TABLE IF EXISTS `posts`;
+
+CREATE TABLE `posts` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL,
+  `community_id` int(10) unsigned not NULL,
+  `head` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `media_id` int(10) unsigned DEFAULT NULL,
+  `is_public` tinyint(1) DEFAULT 1,
+  `is_archived` tinyint(1) DEFAULT 0,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (1, 1, 1, 'dolor', 'Voluptatem tempore aut necessitatibus et consequatur. Ut rem vel aspernatur excepturi aperiam quod pariatur. Expedita dignissimos neque occaecati sapiente rerum laborum officia ad.', 1, 1, 0, '2016-04-09 05:53:45', '2008-11-06 18:03:32');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (2, 2, 2, 'in', 'Dignissimos ab est laborum nisi quia blanditiis. Odio itaque ipsam quasi eius voluptatem nihil. Sit animi voluptatum aliquid consequatur quod nihil et amet. Placeat atque impedit dolorem id quasi dolorum blanditiis.', 2, 0, 0, '1972-12-21 00:42:12', '2010-04-05 04:33:26');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (3, 3, 3, 'assumenda', 'Ut facere et unde qui aliquam eos. Quia corporis enim enim ipsum dolor nostrum beatae. Voluptate nihil quae et aut mollitia fuga. Qui facilis aut voluptatem.', 3, 1, 0, '1970-11-21 23:32:56', '1992-07-16 18:23:57');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (4, 4, 4, 'aliquid', 'Voluptas ut sint et dolore. Sit ipsam saepe quis eveniet et accusantium. Nisi aut at omnis. Tempora ipsam et quibusdam eius voluptatem unde sapiente.', 4, 0, 0, '2005-08-15 16:15:37', '1995-12-27 05:18:17');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (5, 5, 5, 'qui', 'Deserunt provident est tempora deleniti voluptatem velit est beatae. Dolorem quia et voluptatibus voluptas sint cumque harum. Perspiciatis quas est delectus unde dolor corporis sapiente. Est totam eveniet aut qui blanditiis.', 5, 0, 0, '1992-02-09 16:42:08', '2003-04-09 07:12:31');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (6, 6, 6, 'aut', 'Cumque ut ea sit qui omnis saepe omnis. Accusamus numquam magni sunt adipisci non rem et. Maxime beatae ut eum vero perspiciatis. Ut maiores eius ut rem repellat debitis.', 6, 0, 0, '2001-10-17 19:26:11', '2003-01-19 21:25:44');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (7, 7, 7, 'rerum', 'Deserunt rerum inventore facilis quaerat natus animi. Nemo autem voluptatibus alias ea. Esse minima officia recusandae eum aut qui eveniet. Ullam vero tempora rerum autem nobis esse repellat.', 7, 1, 1, '1992-10-03 22:17:23', '1992-11-14 09:40:31');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (8, 8, 8, 'dolorum', 'Quaerat laborum ut ab id aut. Illum veniam aut repellat officia vel enim facilis minima. Doloremque facere corrupti quia accusantium.', 8, 0, 1, '1988-06-25 16:37:56', '1990-05-08 22:02:55');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (9, 9, 9, 'autem', 'Alias quos dicta dolores pariatur veritatis qui qui ipsam. Consequatur impedit id ipsam deleniti laborum qui. Eveniet blanditiis maiores velit. Aut iste provident eum aut eum. Sed ipsum dolore nihil molestiae nulla.', 9, 1, 0, '1995-03-18 07:58:37', '2015-11-26 23:50:55');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (10, 10, 10, 'tenetur', 'Sequi blanditiis cumque corrupti et dolores. Itaque voluptatibus quo cum iusto maiores. Ut ad fugiat quo tenetur. Dolores dolore maxime sed pariatur rerum.', 10, 1, 1, '2014-01-01 03:18:51', '1993-04-10 21:59:26');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (11, 11, 11, 'porro', 'Vero rerum rem praesentium fuga ut similique. Praesentium quo impedit doloremque optio distinctio. Doloremque molestiae similique minus veniam ducimus. Ut nobis in voluptatem accusantium dolor omnis.', 11, 0, 1, '2011-10-14 19:45:50', '1998-07-12 12:10:37');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (12, 12, 12, 'quos', 'Sed ut et sit temporibus. Et velit esse fugit consectetur dolor sunt. Ut quasi veritatis consequatur vero sint eum et tempore.', 12, 1, 0, '2012-04-03 03:11:41', '2004-09-27 03:10:14');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (13, 13, 13, 'voluptas', 'Quasi quos praesentium culpa vero nisi similique minima fuga. Error tempore rerum rerum odit. Quam est libero voluptas impedit inventore excepturi est. Qui blanditiis natus deleniti et praesentium ut qui.', 13, 0, 0, '1975-11-09 11:14:08', '1989-02-11 01:25:17');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (14, 14, 14, 'commodi', 'Deserunt optio tenetur officiis laborum ea. Tempora est excepturi atque. Nesciunt qui id qui esse non ipsum numquam rerum. Ea magnam sint sunt qui voluptatum.', 14, 0, 1, '2017-08-07 09:39:40', '1977-12-06 10:30:07');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (15, 15, 15, 'et', 'Velit culpa tenetur modi perferendis et. Sed et enim ut laborum reprehenderit voluptas ut. Nesciunt delectus similique quidem aspernatur at. Voluptatem quo eveniet consectetur et.', 15, 0, 1, '1981-10-03 06:32:21', '1991-02-17 02:51:14');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (16, 16, 16, 'aut', 'Ducimus aperiam sit aut. Laboriosam ut officia ea ea pariatur. Itaque autem voluptatem mollitia officia ut et sit.', 16, 0, 0, '2002-09-17 11:07:35', '1983-09-30 11:18:05');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (17, 17, 17, 'voluptatem', 'Qui laborum ducimus qui ipsa. Earum vero dolorem est voluptate nisi. Iusto ut ut commodi a minus est.', 17, 1, 0, '1996-06-18 19:36:54', '2006-08-13 04:00:44');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (18, 18, 18, 'sunt', 'Quis commodi consequatur consectetur eos consequatur illum. Eaque et voluptates rerum consequatur sunt dolorem. Aut exercitationem natus sed rerum.', 18, 0, 1, '2004-03-05 11:14:32', '1989-09-07 00:29:50');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (19, 19, 19, 'et', 'Quis vel quis iste omnis enim. Illum voluptatem adipisci nihil laborum. Error optio impedit aut ea nulla.', 19, 1, 0, '2006-06-19 05:38:31', '1978-06-05 12:44:10');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (20, 20, 20, 'dolores', 'Id omnis natus odio ad ad. Occaecati tenetur porro ut. Voluptate id consequatur dolores consequatur soluta consectetur suscipit aut. Eos porro ducimus neque repudiandae et incidunt.', 20, 1, 0, '1978-11-10 14:42:39', '1972-05-14 21:31:48');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (21, 21, 21, 'sed', 'Incidunt odit animi quis et. Quasi harum vel nemo iste eligendi et et ut. Placeat ut quas laudantium et qui. Tempora aperiam dignissimos incidunt culpa est molestias quos omnis.', 21, 1, 1, '2019-08-10 20:53:02', '2016-09-03 12:32:06');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (22, 22, 22, 'ipsam', 'Iste earum est perspiciatis minima temporibus quasi non. Voluptas sint dolores eveniet dolorem nam ut. Quo illum cupiditate quia et expedita qui illo.', 22, 1, 1, '1986-04-08 04:50:31', '1982-05-16 07:05:46');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (23, 23, 23, 'quaerat', 'Cum ut sunt unde magni sit et. Ut aut voluptatum suscipit quis facere modi. Fugit sequi et suscipit veritatis omnis nulla repellendus. Perspiciatis ut et molestias omnis.', 23, 0, 1, '1992-09-05 04:46:08', '1976-11-01 16:56:59');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (24, 24, 24, 'vel', 'Libero et a cum facere. Expedita voluptatem aspernatur dolor asperiores.', 24, 0, 1, '2008-04-05 01:55:15', '2019-05-26 07:33:57');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (25, 25, 25, 'dolor', 'Debitis culpa ut in eos quia. Et odio voluptate est deleniti.', 25, 1, 1, '2010-06-02 14:35:49', '2006-04-12 07:44:21');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (26, 26, 26, 'odio', 'Et quidem occaecati odio sint. Vitae non voluptatem qui veniam. Eius ut fuga nisi qui aperiam libero. Nesciunt animi fuga odit et omnis dolor nihil. Ut ipsa hic provident deserunt non et quo.', 26, 0, 1, '1970-11-27 06:31:40', '1980-10-20 20:07:49');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (27, 27, 27, 'eaque', 'Eligendi perspiciatis architecto hic excepturi blanditiis veritatis. In perspiciatis nostrum soluta sint eius quo nostrum. Ratione eos eligendi nobis deleniti aut.', 27, 1, 0, '2009-05-18 10:58:12', '2014-11-11 23:02:16');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (28, 28, 28, 'assumenda', 'Odio a ab dicta occaecati qui accusamus accusamus. Eligendi consequuntur illum ipsam et non delectus neque. Ut inventore autem dolor deleniti facilis.', 28, 1, 0, '1987-02-12 13:19:55', '2015-06-02 01:06:18');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (29, 29, 29, 'qui', 'Dolor suscipit sapiente enim dolorum exercitationem. Sequi et sit possimus soluta cumque ea qui. Eos consequuntur eos nulla.', 29, 1, 1, '1970-01-22 00:19:25', '1993-05-23 00:56:11');
+INSERT INTO `posts` (`id`, `user_id`, `community_id`, `head`, `body`, `media_id`, `is_public`, `is_archived`, `created_at`, `updated_at`) VALUES (30, 30, 30, 'voluptatum', 'Beatae et eum voluptatem qui nam quia. Quidem voluptatem sit beatae praesentium ut ipsam. Ut sunt fugiat ut non exercitationem harum voluptatem sunt.', 30, 1, 0, '1994-09-21 15:53:26', '1989-01-05 10:24:06');
+
+
+update posts SET user_id = floor(1 + rand() * 100);
+update posts SET 
+	community_id = floor(1 + rand() * 100),
+	media_id = floor(1 + rand() * 100);
+
+-- Таблица лайков
+DROP TABLE IF EXISTS likes;
+CREATE TABLE likes (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  user_id INT UNSIGNED NOT NULL,
+  target_id INT UNSIGNED NOT NULL,
+  target_type ENUM('messages', 'users', 'posts', 'media') NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Временная таблица типов лайков
+DROP TABLE IF EXISTS target_types;
+CREATE TEMPORARY TABLE target_types (
+  name VARCHAR(100) NOT NULL UNIQUE
+);
+
+INSERT INTO target_types (name) VALUES 
+  ('messages'),
+  ('users'),
+  ('media'),
+  ('posts');
+
+-- Заполняем лайки
+INSERT INTO likes 
+  SELECT 
+    id, 
+    FLOOR(1 + (RAND() * 100)), 
+    FLOOR(1 + (RAND() * 100)),
+    (SELECT name FROM target_types ORDER BY RAND() LIMIT 1),
+    CURRENT_TIMESTAMP 
+  FROM messages;
+
+-- Проверим
+SELECT * FROM likes LIMIT 10;
+
+ALTER TABLE profiles
+  ADD CONSTRAINT profiles_user_id_fk 
+    FOREIGN KEY (user_id) REFERENCES users(id)
+      ON DELETE CASCADE;
+
+DESC posts;
+
+
+ALTER TABLE messages
+  ADD CONSTRAINT messages_from_user_id_fk 
+    FOREIGN KEY (from_user_id) REFERENCES users(id),
+  ADD CONSTRAINT messages_to_user_id_fk 
+    FOREIGN KEY (to_user_id) REFERENCES users(id);
+
+
+ALTER TABLE friendship
+  ADD CONSTRAINT friendship_user_id_fk 
+    FOREIGN KEY (user_id) REFERENCES users(id),
+  ADD CONSTRAINT friendship_friend_id_fk 
+    FOREIGN KEY (friend_id) REFERENCES users(id),
+ ADD CONSTRAINT friendship_friendship_id_status_fk 
+    FOREIGN KEY (friendship_status_id) REFERENCES friendship_statuses(id);
+
+ALTER TABLE communities_users
+  ADD CONSTRAINT communities_users_user_id_fk 
+    FOREIGN KEY (user_id) REFERENCES users(id),
+  ADD CONSTRAINT communities_users_community_id_fk 
+    FOREIGN KEY (community_id) REFERENCES communities(id);
+
+ALTER TABLE media
+  ADD CONSTRAINT media_user_id_fk 
+    FOREIGN KEY (user_id) REFERENCES users(id),
+  ADD CONSTRAINT media_media_type_id_fk 
+    FOREIGN KEY (media_type_id) REFERENCES media_types(id);
+
+   
+ALTER TABLE likes
+  ADD CONSTRAINT likes_user_id_fk 
+    FOREIGN KEY (user_id) REFERENCES users(id);
+   
+ALTER TABLE posts
+  ADD CONSTRAINT posts_user_id_fk 
+    FOREIGN KEY (user_id) REFERENCES users(id),
+  ADD CONSTRAINT posts_community_id_fk 
+    FOREIGN KEY (community_id) REFERENCES communities(id),
+  ADD CONSTRAINT posts_media_id_status_fk 
+    FOREIGN KEY (media_id) REFERENCES media(id);
