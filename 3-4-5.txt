@@ -21,4 +21,5 @@ FROM profiles ORDER BY birthday desc LIMIT 10;
 SELECT  
 	(SELECT first_name FROM users WHERE users.id = likes.user_id) AS first_name,
 	(SELECT last_name FROM users WHERE users.id = likes.user_id) AS last_name,
+	user_id,
 count(*) FROM likes GROUP BY user_id LIMIT 10;
