@@ -1,0 +1,37 @@
+USE vk;
+
+--Определить кто больше поставил лайков (всего) - мужчины или женщины?
+
+SELECT profiles.gender, count(likes.id)
+FROM profiles JOIN likes
+ON profiles.user_id = likes.user_id
+GROUP BY gender;
+
+
+--Подсчитать общее количество лайков десяти самым молодым пользователям (сколько лайков получили 10 самых молодых пользователей).
+
+SELECT users.first_name, users.last_name, profiles.user_id, profiles.birthday, count(likes.target_id) AS total_likes
+FROM users JOIN  profiles 
+ON users.id = profiles.user_id
+left JOIN likes 
+ON likes.target_type = 'users' AND profiles.user_id = likes.target_id
+GROUP BY user_id
+ORDER BY birthday DESC
+LIMIT 10;
+
+--Проверка
+
+SELECT * FROM likes
+WHERE target_id = 80 AND target_type='users';
+
+
+--Найти 10 пользователей, которые проявляют наименьшую активность в использовании социальной сети
+
+SELECT users.first_name, users.last_name, profiles.user_id,  count(likes.user_id) AS total_likes
+FROM users JOIN  profiles 
+ON users.id = profiles.user_id
+left JOIN likes 
+ON profiles.user_id = likes.user_id
+GROUP BY user_id
+ORDER BY total_likes 
+LIMIT 10;
