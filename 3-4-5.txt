@@ -1,0 +1,25 @@
+--Определить кто больше поставил лайков (всего) - мужчины или женщины?
+SELECT concat(
+	'Лайков от мужчин: ',
+	(SELECT count(*) FROM likes WHERE user_id IN (SELECT user_id FROM profiles WHERE gender = 'm')),
+	' ',
+	'Лайков от женщин: ',
+	(SELECT count(*) FROM likes WHERE user_id IN (SELECT user_id FROM profiles WHERE gender = 'f')));
+	
+--Подсчитать общее количество лайков десяти самым молодым пользователям (сколько лайков получили 10 самых молодых пользователей).
+
+SELECT
+	(SELECT first_name FROM users WHERE users.id = profiles.user_id) AS first_name,
+	(SELECT last_name FROM users WHERE users.id = profiles.user_id) AS last_name,
+	(SELECT count(*) FROM likes WHERE profiles.user_id = likes.target_id AND likes.target_type = 'users' ) AS 'likes',
+	birthday
+FROM profiles ORDER BY birthday desc LIMIT 10;
+
+--Найти 10 пользователей, которые проявляют наименьшую активность в использовании социальной сети
+
+
+SELECT  
+	(SELECT first_name FROM users WHERE users.id = likes.user_id) AS first_name,
+	(SELECT last_name FROM users WHERE users.id = likes.user_id) AS last_name,
+	user_id,
+count(*) FROM likes GROUP BY user_id LIMIT 10;
